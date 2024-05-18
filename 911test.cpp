@@ -77,7 +77,7 @@ int main()
 
 
     //tree
-     //trunk
+    //trunk
     rectangle(70,320,80,400);
     //branches
      line(80,340,100,300);
@@ -161,8 +161,65 @@ int main()
 
     int plane_x = 0;
 
-    while (!kbhit()) { // Loop until a key is pressed
+    while (plane_x<=110) {
         cleardevice(); // Clear previous frame
+
+        //Cars
+        line(270,370,300,370);
+        line(270,370,265,377);
+        line(300,370,305,377);
+
+        line(255,382,265,377);
+        line(255,382,255,395);
+        line(255,395,265,395);
+
+        line(315,382,305,377);
+        line(315,382,315,395);
+        line(315,395,305,395);
+
+        line(275,395,295,395);
+        line(285,390,285,375);
+        //car window
+        line(272,373,270,377);
+        line(270,377,280,377);
+        line(280,377,280,373);
+        line(272,373,280,373);
+
+        line(298,373,300,377);
+        line(300,377,290,377);
+        line(290,377,290,373);
+        line(298,373,290,373);
+        //car color
+        setfillstyle(SOLID_FILL, RED);
+        floodfill(290, 385, WHITE);
+
+        //car wheel
+        circle(270,395,5);
+        circle(300,395,5);
+        setfillstyle(SOLID_FILL, BLACK);
+        floodfill(270, 395, WHITE);
+        setfillstyle(SOLID_FILL, BLACK);
+        floodfill(300, 395, WHITE);
+
+
+        //cloud
+        line(500-plane_x,48,580-plane_x,48);
+        ellipse(505-plane_x,49,50,180,5,10);
+        ellipse(510-plane_x,43,50,180,5,10);
+        ellipse(520-plane_x,38,40,180,10,10);
+        ellipse(540-plane_x,38,30,160,20,20);
+        ellipse(550-plane_x,38,15,90,15,10);
+        ellipse(560-plane_x,42,10,80,15,10);
+        ellipse(575-plane_x,48,0,120,5,10);
+        setfillstyle(SOLID_FILL, LIGHTGRAY);
+        floodfill(510-plane_x,45,WHITE);
+
+
+
+
+        //plane color
+        setfillstyle(SOLID_FILL, LIGHTBLUE);
+        floodfill(105 + plane_x, 105, WHITE);
 
         // Draw the plane
         // Body
@@ -303,7 +360,6 @@ int main()
         floodfill(195, 320, WHITE);
         setfillstyle(SOLID_FILL, LIGHTGREEN);
         floodfill(190, 320, WHITE);
-
         //buildings
         rectangle(340,400,390,120);
         line(390,120,400,130);
@@ -423,31 +479,18 @@ int main()
 
 
 
-    setfillstyle(SOLID_FILL,LIGHTGRAY);
-    floodfill(345,390,WHITE);
-    setfillstyle(SOLID_FILL,LIGHTMAGENTA);
-   floodfill(455,390,WHITE);
+        setfillstyle(SOLID_FILL,LIGHTGRAY);
+        floodfill(345,390,WHITE);
+        setfillstyle(SOLID_FILL,LIGHTMAGENTA);
+        floodfill(455,390,WHITE);
 
 
-        // For Roads and Road lines
-        setcolor(WHITE);
-        line(1, 450, 700, 450);
-
-        rectangle(10, 425, 50, 425);
-        rectangle(100, 425, 140, 425);
-        rectangle(190, 425, 230, 425);
-        rectangle(280, 425, 320, 425);
-        rectangle(370, 425, 410, 425);
-        rectangle(450, 425, 490, 425);
-        rectangle(530, 425, 570, 425);
-        rectangle(620, 425, 660, 425);
-        line(1,400,700,400);
         //bg buildings
           rectangle(530, 200, 610, 400); // Coordinates for building
           line(530,230,610,230);
           line (530,260,610,260);
           line (530,290,610,290);
-          rectangle(560,310,580,400);
+          rectangle(560,350,580,400);
 
 
           rectangle(540,210,550,220);
@@ -476,7 +519,7 @@ int main()
           rectangle(590,240,600,250);
 
 
-           rectangle(540,270,550,280);
+          rectangle(540,270,550,280);
           rectangle(545,270,555,280);
           rectangle(550,270,560,280);
           rectangle(555,270,565,280);
@@ -488,7 +531,32 @@ int main()
           rectangle(585,270,595,280);
           rectangle(590,270,600,280);
 
+          setfillstyle(SOLID_FILL,LIGHTRED);
+          floodfill(605,395,WHITE);
+          setfillstyle(SOLID_FILL,LIGHTRED);
+          floodfill(605,285,WHITE);
+          setfillstyle(SOLID_FILL,LIGHTRED);
+          floodfill(605,255,WHITE);
+          setfillstyle(SOLID_FILL,LIGHTRED);
+          floodfill(605,225,WHITE);
 
+
+
+
+
+        // For Roads and Road lines
+        setcolor(WHITE);
+        line(1, 450, 700, 450);
+
+        rectangle(10, 425, 50, 425);
+        rectangle(100, 425, 140, 425);
+        rectangle(190, 425, 230, 425);
+        rectangle(280, 425, 320, 425);
+        rectangle(370, 425, 410, 425);
+        rectangle(450, 425, 490, 425);
+        rectangle(530, 425, 570, 425);
+        rectangle(620, 425, 660, 425);
+        line(1,400,700,400);
 
 
         // Refresh the screen
